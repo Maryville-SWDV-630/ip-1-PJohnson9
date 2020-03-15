@@ -48,7 +48,7 @@ def main():
     print('1. Steve in classmates:  ','Steve' in classmates) 
     print('   Sam in classmates:    ','Sam' in classmates)
     
-    print('2. Iterate ove classmates:')
+    print('2. Iterate over classmates:')
     for classmate in classmates:
         print(classmate)
     
