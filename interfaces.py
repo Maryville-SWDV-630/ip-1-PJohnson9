@@ -21,14 +21,36 @@
 #    that all of the possible implementations could store data effectively.
 
 class Teams:
-  def __init__(self, members):
-    self.__myTeam = members
+    def __init__(self, members):
+        self.__myTeam = members
 
-  def __len__(self):
-    return len(self.__myTeam)
+    def __len__(self):
+        return len(self.__myTeam)
+
+    def __contains__(self, member):
+        return member in self.__myTeam
+    
+    def __iter__(self):
+        self.__i = 0
+        return self
+        
+    def __next__(self):
+        if self.__i < len(self.__myTeam):
+            nextItem = self.__myTeam[self.__i]
+            self.__i += 1
+            return nextItem
+        else:
+            raise StopIteration
 
 def main():
-  classmates = Teams(['John', 'Steve', 'Tim'])
-  print (len(classmates))
+    classmates = Teams(['John', 'Steve', 'Tim'])
 
+    print('1. Steve in classmates:  ','Steve' in classmates) 
+    print('   Sam in classmates:    ','Sam' in classmates)
+    
+    print('2. Iterate ove classmates:')
+    for classmate in classmates:
+        print(classmate)
+    
+    print('3. Length of classmates: ',len(classmates))
 main()
