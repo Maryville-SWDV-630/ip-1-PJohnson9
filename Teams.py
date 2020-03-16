@@ -43,4 +43,3 @@ def main():
     print('3. Length of classmates:',len(classmates))
     
 main()
-
